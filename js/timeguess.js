@@ -6,10 +6,10 @@ const start = document.getElementById("start");
 const stop = document.getElementById("stop");
 const reset = document.getElementById("reset");
 
-// const soundStart = new Audio("sound/start.mp3");
-// const soundStop1 = new Audio("sound/stop1.mp3");
-// const soundStop2 = new Audio("sound/stop3.mp3");
-// const soundReset = new Audio("sound/reset.mp3");
+// const soundStart = new Audio("./sound/start.mp3");
+// const soundStop1 = new Audio("./sound/stop1.mp3");
+// const soundStop2 = new Audio("./sound/stop3.mp3");
+// const soundReset = new Audio("./sound/reset.mp3");
 
 let startTime;       // Startボタンクリック時の時刻
 let timeoutid;       // ID
@@ -30,7 +30,7 @@ start.addEventListener("click",
 if (soundEndflag === "1") {
   soundControl("end", "");
   }
-  soundControl("start","sound/start.mp3"); //サウンド
+  soundControl("start","./sound/start.mp3"); //サウンド
   soundEndflag = "1";
     setButtonStateRunning();
     startTime = Date.now();
@@ -49,13 +49,13 @@ stop.addEventListener("click",
     // if (soundEndflag === "1") {
     //   soundControl("end",);
     //   }
-    //   soundControl("start", "sound/stop1.mp3"); //サウンド
+    //   soundControl("start", "./sound/stop1.mp3"); //サウンド
     //   soundEndflag = "1";
     const checkTimer = Date.now() - startTime ;
     if(checkTimer>10000 && checkTimer < 11000) {
-      soundControl("start", "sound/stop2.mp3") ;
+      soundControl("start", "./sound/stop2.mp3") ;
     }else{
-      soundControl("start", "sound/stop1.mp3");
+      soundControl("start", "./sound/stop1.mp3");
     }
 
     // タイマーを"停止中"状態とする
@@ -75,7 +75,7 @@ reset.addEventListener("click",
     if (soundEndflag === "1") {
       soundControl("end", "");
       }
-      soundControl("start","sound/reset.mp3"); //サウンド
+      soundControl("start","./sound/reset.mp3"); //サウンド
       soundEndflag = "1";
     // ボタンを"初期"状態とする
     setButtonStateInitial();
